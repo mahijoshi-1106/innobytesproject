@@ -1,0 +1,112 @@
+/* Enhanced pastel UI with dynamic navbar, hover effects, smooth animations */
+
+:root {
+  --primary: #C9A7E8;
+  --primary-dark: #A98BD6;
+  --bg: #E8F9FD;
+  --accent: #F7D9C4;
+  --text-dark: #4A4453;
+  --text-light: #7A7283;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-dark);
+  transition: background 0.4s ease;
+}
+
+/* Navbar */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+
+nav.scrolled{
+  background: rgba(255,255,255,0.95);
+}
+
+.nav__links{
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav__links a{
+  color: var(--text-dark);
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+.nav__links a::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:0;
+  height:2px;
+  background: var(--primary);
+  transition:0.3s;
+}
+
+.nav__links a:hover{
+  color: var(--primary-dark);
+}
+
+.nav__links a:hover::after{
+  width:100%;
+}
+
+/* Buttons */
+.btn {
+  padding: .8rem 1.6rem;
+  border-radius: 8px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover{
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+}
+
+/* Image hover scale */
+img:hover{
+  transform: scale(1.05);
+  transition: .4s ease;
+}
+
+/* Fade in animation */
+.fade{
+  opacity:0;
+  transform: translateY(20px);
+  animation: fadeIn .8s ease forwards;
+}
+@keyframes fadeIn {
+  to{
+    opacity:1;
+    transform: translateY(0);
+  }
+}

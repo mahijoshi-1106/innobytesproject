@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingsukh Guest House</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet">
+
+<style>
+  :root {
+    --primary: #901f1f;
+    --primary-dark: #ae7575;
+    --text-dark: #44344F;
+    --text-light: #735D78;
+    --accent: #FBE7C6;
+    --white: #ffffff;
+    --max-width: 1200px;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #d8cacf;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { width: 100%; display: block; border-radius: 10px; }
+
+  header {
+    height: 90vh;
+    background-image: url('https://source.unsplash.com/1600x900/?nature,hotel');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-align: center;
+  }
+
+  header h1 { font-size: 3rem; margin-bottom:  1rem; font-family:fantasy; color: #691e1e; }
+  header span { color: var(--primary-dark); }
+  header p { font-size: 1.5rem; margin-bottom: 1rem; opacity: 0.8; color: #FDE2E4; }
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--primary-dark);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .btn:hover { background-color: var(--primary); color: var(--text-dark); }
+
+  .section__container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 4rem 1rem;
+  }
+  .section__subheader {
+    font-weight: 500; letter-spacing: 2px; color: var(--text-dark);
+    text-align: center; margin-bottom: 0.5rem; position: relative;
+  }
+  .section__subheader::after {
+    content: "";
+    width: 5rem;
+    height: 2px;
+    background: var(--primary-dark);
+    display: block;
+    margin: 0.5rem auto 0;
+  }
+  .section__header {
+    text-align: center; font-size: 2.5rem; font-weight: 700;
+    margin-bottom: 2rem; color: var(--text-dark);
+  }
+
+  /* Bottom Navbar */
+  nav {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 214, 214, 0.95);
+    border-radius: 50px;
+    display: flex;
+    gap: 2rem;
+    padding: 0.5rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    max-height: 0;
+    flex-direction: column;
+  }
+  .nav-links.open { max-height: 500px; }
+
+  nav a {
+    color: var(--text-dark);
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+  }
+  nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -5px;
+    width: 0%; height: 2px;
+    background-color: var(--primary-dark);
+    transition: 0.3s;
+  }
+  nav a:hover::after { width: 100%; }
+
+  .nav-toggle {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+  }
+
+  /* Room cards */
+  .room__grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  .room__card { background: var(--accent); border-radius: 15px; overflow: hidden; transition: transform 0.3s; }
+  .room__card:hover { transform: translateY(-10px); }
+  .room__card img { border-radius: 15px 15px 0 0; }
+  .room__card-details { padding: 1rem; }
+  .room__card-details h4 { margin-bottom: 0.5rem; color: var(--text-dark); }
+  .room__card-details p { color: var(--text-light); margin-bottom: 0.5rem; }
+  .room__card-details h5 { color: var(--text-dark); }
+
+  /* Responsive for larger screens */
+  @media(min-width: 768px) {
+    .nav-links { flex-direction: row; max-height: none; display: flex; }
+    .nav-toggle { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+
+  <h1>You are heartly welcome<br>In Our <span>Guest House</span></h1>
+  <a href="https://wa.link/at5ion" class="btn">BOOK NOW</a>
+</header>
+
+<section class="section__container" id="about">
+  <p class="section__subheader">ABOUT US</p>
+  <h2 class="section__header">The Best Holidays Start Here!</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:2rem; justify-content:center;">
+    <img src="luxury-bedroom-hotel.jpg" alt="Baranti Hills" style="border-radius:15px;">
+    <img src="3d-room-interior-with-classic-design-furniture.jpg" alt="Baranti Lake" style="border-radius:15px;">
+  </div>
+  <p style="text-align:center; max-width:600px; margin:auto; margin-top:1rem;">
+    Enjoy a tranquil stay at Kingsukh Guest House, surrounded by the scenic beauty of Baranti Hills, Biharinath Hill, and Baranti Lake. Comfort, scenic views, and heartfelt hospitality await you.
+  </p>
+</section>
+
+<section class="section__container" id="rooms">
+  <p class="section__subheader">OUR ROOMS</p>
+  <h2 class="section__header">Comfortable Stays Await You</h2>
+  <div class="room__grid">
+    <div class="room__card">
+      <img src="hipster-travellers-ready-trip-indian-men-woman-holding-suitcases-house.jpg" alt="Cozy Room">
+      <div class="room__card-details">
+        <h4>Cozy Haven Room</h4>
+        <p>Snug and intimate, perfect for relaxation.</p>
+        <h5>Rs. 1000/night</h5>
+        <a href="https://wa.link/at5ion" class="btn">BOOK NOW</a>
+      </div>
+    </div>
+    <div class="room__card">
+      <img src="breakfast-hotel.jpg"Luxury Room alt="Luxury Room"   >
+      <div class="room__card-details">
+        <h4>Spacious Serenity Suite</h4>
+        <p>Luxury and spacious comfort for a perfect stay.</p>
+        <h5>Rs. 1500/night</h5>
+        <a href="https://wa.link/at5ion" class="btn">BOOK NOW</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section__container" id="contact">
+  <p class="section__subheader">CONTACT US</p>
+  <h2 class="section__header">Get In Touch</h2>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    Beside Barshal Water Tank, Manpur, Barhanti, West Bengal 723156 <br>
+    +91 9007062180 <br>
+    kkghosh0099@gmail.com
+  </p>
+</section>
+
+<footer style="background:#44344F; color:white; text-align:center; padding:2rem 1rem;">
+  <p>© 2025 Kingsukh Guest House. All Rights Reserved.</p>
+</footer>
+
+<!-- Bottom Navbar -->
+<nav>
+  <i class="ri-menu-line nav-toggle"></i>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#service">Services</a>
+    <a href="#gallary">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<script>
+  const toggleBtn = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggleBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    toggleBtn.classList.toggle('ri-close-line');
+    toggleBtn.classList.toggle('ri-menu-line');
+  });
+</script>
+
+</body>
+</html>
